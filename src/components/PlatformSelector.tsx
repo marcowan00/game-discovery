@@ -32,7 +32,7 @@ const PlatformSelector = ({
       <MenuList>
         <MenuOptionGroup
           type="radio"
-          value={selectedPlatformId?.toString()}
+          value={selectedPlatformId?.toString() || ""}
           onChange={(value) => onselectPlatformId(Number(value as string))}
         >
           {data?.results.map((platform) => (

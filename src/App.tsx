@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import { useState } from "react";
+import GameFilterHeader from "./components/GameFilterHeader";
 import GameGrid from "./components/GameGrid";
-import GameHeading from "./components/GameHeading";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import PlatformSelector from "./components/PlatformSelector";
@@ -11,7 +11,7 @@ export interface GameQuery {
   genreId?: number;
   platformId?: number;
   sortOrder: string;
-  searchText: string;
+  searchText?: string;
   pageSize: number;
 }
 
@@ -48,7 +48,18 @@ function App() {
       </Show>
       <GridItem area="main">
         <Box paddingLeft={2}>
-          <GameHeading gameQuery={gameQuery} />
+          <GameFilterHeader
+            gameQuery={gameQuery}
+            onRemovePlatform={() =>
+              setGameQuery({ ...gameQuery, platformId: undefined })
+            }
+            onRemoveGenre={() =>
+              setGameQuery({ ...gameQuery, genreId: undefined })
+            }
+            onRemoveSearch={() =>
+              setGameQuery({ ...gameQuery, searchText: undefined })
+            }
+          />
           <Flex paddingLeft={2} marginBottom={5}>
             <Box marginRight={5}>
               <PlatformSelector
