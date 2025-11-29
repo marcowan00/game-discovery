@@ -24,9 +24,16 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
       gameQuery: { ...store.gameQuery, platformId: platformId },
     })),
   setSortOrder: (sortOrder) =>
-    set((store) => ({ gameQuery: { ...store.gameQuery, sortOrder } })),
+    set((store) => ({
+      gameQuery: { ...store.gameQuery, sortOrder: sortOrder },
+    })),
   setSearchText: (searchText) =>
-    set((store) => ({ gameQuery: { ...store.gameQuery, searchText } })),
+    set((store) => ({
+      gameQuery: {
+        ...store.gameQuery,
+        searchText: searchText?.trim() || undefined,
+      },
+    })),
 }));
 
 export default useGameQueryStore;
