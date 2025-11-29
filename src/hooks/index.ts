@@ -1,0 +1,9 @@
+export { useGame } from "./useGame";
+export { useGames } from "./useGames";
+export { useGamesCount } from "./useGamesCount";
+export { useGenres } from "./useGenres";
+export { useLookupGenre } from "./useLookupGenre";
+export { useLookupPlatform } from "./useLookupPlatform";
+export { usePlatforms } from "./usePlatforms";
+export { useScreenShots } from "./useScreenShots";
+export { useTrailers } from "./useTrailers";

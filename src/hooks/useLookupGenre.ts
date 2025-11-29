@@ -1,9 +1,7 @@
-import useGenres from "./useGenres";
+import { useGenres } from "./useGenres";
 
-const useLookupGenre = (id?: number) => {
+export const useLookupGenre = (id?: number) => {
   const { data } = useGenres();
 
   return data?.results.find((genre) => genre.id === id);
 };
-
-export default useLookupGenre;

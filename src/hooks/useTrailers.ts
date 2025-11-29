@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Trailer } from "../entities";
 import ApiClient from "../services/apiClient";
 
-const useTrailers = (gameId: number) => {
+export const useTrailers = (gameId: number) => {
   const apiClient = new ApiClient<Trailer>(`/games/${gameId}/movies`);
 
   return useQuery({
@@ -12,5 +12,3 @@ const useTrailers = (gameId: number) => {
     },
   });
 };
-
-export default useTrailers;

@@ -4,7 +4,7 @@ import ApiClient from "../services/apiClient";
 
 const apiClient = new ApiClient<Game>("/games");
 
-const useGame = (slug: string) => {
+export const useGame = (slug: string) => {
   return useQuery({
     queryKey: ["games", slug],
     queryFn: () => {
@@ -12,5 +12,3 @@ const useGame = (slug: string) => {
     },
   });
 };
-
-export default useGame;

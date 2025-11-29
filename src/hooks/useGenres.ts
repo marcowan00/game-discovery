@@ -6,7 +6,7 @@ import ApiClient from "../services/apiClient";
 
 const apiClient = new ApiClient<Genre>("/genres");
 
-const useGenres = () => {
+export const useGenres = () => {
   return useQuery({
     queryKey: ["genres"],
     queryFn: () => apiClient.getAll(),
@@ -14,5 +14,3 @@ const useGenres = () => {
     initialData: genres,
   });
 };
-
-export default useGenres;

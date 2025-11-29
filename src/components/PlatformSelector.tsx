@@ -7,8 +7,7 @@ import {
   MenuOptionGroup,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import useLookupPlatform from "../hooks/useLookupPlatform";
-import usePlatforms from "../hooks/usePlatforms";
+import { useLookupPlatform, usePlatforms } from "../hooks";
 import useGameQueryStore from "../stores/gameQueryStore";
 
 const PlatformSelector = () => {

@@ -6,7 +6,7 @@ import ApiClient from "../services/apiClient";
 
 const apiClient = new ApiClient<Platform>("/platforms/lists/parents");
 
-const usePlatforms = () => {
+export const usePlatforms = () => {
   return useQuery({
     queryKey: ["platforms"],
     queryFn: apiClient.getAll,
@@ -14,5 +14,3 @@ const usePlatforms = () => {
     initialData: platforms,
   });
 };
-
-export default usePlatforms;
