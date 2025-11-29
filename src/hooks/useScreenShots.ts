@@ -6,7 +6,7 @@ const useScreenShots = (gameId: number) => {
   const apiClient = new ApiClient<Screenshot>(`/games/${gameId}/screenshots`);
 
   return useQuery({
-    queryKey: ["screenshots"],
+    queryKey: ["screenshots", gameId],
     queryFn: () => {
       return apiClient.getAll();
     },
