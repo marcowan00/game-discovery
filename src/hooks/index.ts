@@ -5,5 +5,5 @@ export { useGenres } from "./useGenres";
 export { useLookupGenre } from "./useLookupGenre";
 export { useLookupPlatform } from "./useLookupPlatform";
 export { usePlatforms } from "./usePlatforms";
-export { useScreenShots } from "./useScreenShots";
+export { useScreenshots } from "./useScreenshots";
 export { useTrailers } from "./useTrailers";
