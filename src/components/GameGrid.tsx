@@ -8,7 +8,7 @@ import GameCardSkeleton from "./GameCardSkeleton";
 
 const GameGrid = () => {
   const { data, error, isLoading, hasNextPage, fetchNextPage } = useGames();
-  const skeletons = [1, 2, 3, 4, 5, 6];
+  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   if (error) return <Text>{error.message}</Text>;
 
