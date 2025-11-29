@@ -41,6 +41,7 @@ const GenreList = () => {
                 fontWeight={genre.id === genreId ? "bold" : "normal"}
                 fontSize="md"
                 variant="link"
+                minWidth={0}
                 onClick={() => setSelectedGenreId(genre.id)}
               >
                 {genre.name}
