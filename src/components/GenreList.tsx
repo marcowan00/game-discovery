@@ -16,13 +16,18 @@ const GenreList = () => {
   const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
   const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
 
+  const handleGenreClick = (id: number) => {
+    setSelectedGenreId(id);
+    window.scrollTo({ top: 0 });
+  };
+
   if (error) return null;
 
   if (isLoading) return <Spinner />;
 
   return (
     <>
-      <Heading fontSize="2xl" marginTop={9} marginBottom={3}>
+      <Heading fontSize="2xl" marginTop={9} marginBottom={5}>
         Genres
       </Heading>
       <List>
@@ -42,7 +47,7 @@ const GenreList = () => {
                 fontSize="md"
                 variant="link"
                 minWidth={0}
-                onClick={() => setSelectedGenreId(genre.id)}
+                onClick={() => handleGenreClick(genre.id)}
               >
                 {genre.name}
               </Button>
