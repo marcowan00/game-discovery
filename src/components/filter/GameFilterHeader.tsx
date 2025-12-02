@@ -6,8 +6,8 @@ import {
   TagCloseButton,
   TagLabel,
 } from "@chakra-ui/react";
-import { useGamesCount, useLookupGenre, useLookupPlatform } from "../hooks";
-import useGameQueryStore from "../stores/gameQueryStore";
+import { useGamesCount, useLookupGenre, useLookupPlatform } from "../../hooks";
+import useGameQueryStore from "../../stores/gameQueryStore";
 
 const GameFilterHeader = () => {
   const platformId = useGameQueryStore((s) => s.gameQuery.platformId);

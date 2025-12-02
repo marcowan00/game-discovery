@@ -1,4 +1,4 @@
-import { useTrailers } from "../hooks";
+import { useTrailers } from "../../hooks";
 
 interface Props {
   gameId: number;

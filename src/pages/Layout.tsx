@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
-import BackToTopButton from "../components/BackToTopButton";
-import NavBar from "../components/NavBar";
+import BackToTopButton from "../components/common/BackToTopButton";
+import NavBar from "../components/common/NavBar";
 
 const Layout = () => {
   return (

@@ -7,11 +7,11 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
-import ExpandableText from "../components/ExpandableText";
-import FavoriteButton from "../components/FavoriteButton";
-import GameAttributes from "../components/GameAttributes";
-import GameScreenshots from "../components/GameScreenshots";
-import GameTrailer from "../components/GameTrailer";
+import ExpandableText from "../components/common/ExpandableText";
+import FavoriteButton from "../components/favorites/FavoriteButton";
+import GameAttributes from "../components/game/GameAttributes";
+import GameScreenshots from "../components/game/GameScreenshots";
+import GameTrailer from "../components/game/GameTrailer";
 import { useGame } from "../hooks";
 
 const GameDetailPage = () => {

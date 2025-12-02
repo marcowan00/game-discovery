@@ -1,7 +1,7 @@
 import { IconButton, useToast } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
-import { Game } from "../entities";
-import useFavoritesStore from "../stores/favoritesStore";
+import { Game } from "../../entities";
+import useFavoritesStore from "../../stores/favoritesStore";
 import ms from "ms";
 
 interface Props {

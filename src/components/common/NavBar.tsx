@@ -2,7 +2,7 @@ import { Box, HStack, Icon } from "@chakra-ui/react";
 import { RiGameLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import DarkModeSwitch from "./DarkModeSwitch";
-import SearchInput from "./SearchInput";
+import SearchInput from "../filter/SearchInput";
 
 const NavBar = () => {
   return (
