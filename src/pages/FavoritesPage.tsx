@@ -30,7 +30,7 @@ const FavoritesPage = () => {
 
   return (
     <Box paddingY={10}>
-      <FavoriteList />;
+      <FavoriteList />
     </Box>
   );
 };
