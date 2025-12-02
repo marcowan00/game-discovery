@@ -1,8 +1,8 @@
-import { IconButton, useToast } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
+import { IconButton, useToast } from "@chakra-ui/react";
+import ms from "ms";
 import { Game } from "../../entities";
 import useFavoritesStore from "../../stores/favoritesStore";
-import ms from "ms";
 
 interface Props {
   game: Game;
@@ -15,7 +15,10 @@ const FavoriteButton = ({ game }: Props) => {
   const favorited = useFavoritesStore((s) => s.isFavorite(game.id));
   const toast = useToast();
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     if (favorited) {
       removeFavorite(game.id);
     } else {

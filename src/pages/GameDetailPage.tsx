@@ -26,7 +26,7 @@ const GameDetailPage = () => {
     <SimpleGrid
       columns={{ sm: 1, md: 2 }}
       spacing={5}
-      paddingX={10}
+      paddingX={{ base: 1, lg: 10 }}
       paddingY={5}
     >
       <GridItem>
