@@ -11,13 +11,18 @@ import { useGenres } from "../hooks";
 import getCroppedImageUrl from "../services/imageUrl";
 import useGameQueryStore from "../stores/gameQueryStore";
 
-const GenreList = () => {
+interface Props {
+  onSelectGenre?: () => void;
+}
+
+const GenreList = ({ onSelectGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
   const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
 
   const handleGenreClick = (id: number) => {
     setSelectedGenreId(id);
+    onSelectGenre?.();
     window.scrollTo({ top: 0 });
   };
 

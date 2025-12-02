@@ -23,7 +23,6 @@ const BackToTopButton = () => {
   };
 
   useEffect(() => {
-    // Scroll event throttling
     let timeoutId: NodeJS.Timeout;
 
     const handleScroll = () => {
@@ -45,8 +44,8 @@ const BackToTopButton = () => {
       aria-label="Back to top"
       icon={<ArrowUpIcon />}
       position="fixed"
-      bottom="80px"
-      right="40px"
+      bottom={{ base: "30px", lg: "80px" }}
+      right={{ base: "20px", lg: "40px" }}
       variant="solid"
       boxSize="56px"
       fontSize="24px"
