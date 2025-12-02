@@ -1,8 +1,8 @@
 import {
   Box,
-  Flex,
   GridItem,
   Heading,
+  HStack,
   SimpleGrid,
   Spinner,
 } from "@chakra-ui/react";
@@ -30,10 +30,16 @@ const GameDetailPage = () => {
       paddingY={5}
     >
       <GridItem>
-        <Flex marginBottom={5} gap={10}>
+        <HStack
+          marginBottom={5}
+          paddingRight={5}
+          gap={5}
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <Heading>{game.name}</Heading>
           <FavoriteButton game={game} />
-        </Flex>
+        </HStack>
         <ExpandableText limit={300}>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />
       </GridItem>

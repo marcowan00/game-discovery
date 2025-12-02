@@ -14,7 +14,13 @@ const useFavoritesStore = create<FavoritesStore>()(
     (set, get) => ({
       favorites: [],
       addFavorite: (game) =>
-        set((state) => ({ favorites: [...state.favorites, game] })),
+        set((state) => {
+          // 检查是否已收藏
+          if (state.favorites.some((g) => g.id === game.id)) {
+            return state;
+          }
+          return { favorites: [...state.favorites, game] };
+        }),
       removeFavorite: (gameId) =>
         set((state) => ({
           favorites: state.favorites.filter((g) => g.id !== gameId),

@@ -3,13 +3,14 @@ import {
   Card,
   CardBody,
   CardFooter,
-  Flex,
   Heading,
+  HStack,
   Image,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Game } from "../../entities";
 import getCroppedImageUrl from "../../services/imageUrl";
+import CriticScore from "../game/CriticScore";
 import PlatformIconList from "../game/PlatformIconList";
 import FavoriteButton from "./FavoriteButton";
 
@@ -35,10 +36,13 @@ const FavoriteGameCard = ({ game }: Props) => {
         height="100%"
         src={getCroppedImageUrl(game.background_image)}
       />
-      <Flex flex="1" justifyContent="space-between" alignItems="center">
+      <HStack flex="1" justifyContent="space-between" alignItems="center">
         <CardBody>
           <Box>
-            <Heading fontSize="24px">{game.name}</Heading>
+            <HStack gap={5} alignItems="center">
+              <Heading fontSize="24px">{game.name}</Heading>
+              <CriticScore score={game.metacritic} />
+            </HStack>
             <PlatformIconList
               platforms={game.parent_platforms?.map((p) => p.platform)}
             />
@@ -47,7 +51,7 @@ const FavoriteGameCard = ({ game }: Props) => {
         <CardFooter>
           <FavoriteButton game={game} />
         </CardFooter>
-      </Flex>
+      </HStack>
     </Card>
   );
 };
