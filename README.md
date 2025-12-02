@@ -30,7 +30,7 @@ A lightweight game discovery platform supporting game browsing and searching. Yo
 
 ## 4. Online Preview
 
-Deployed to Vercel: [https://game-discovery-ten.vercel.app/](https://game-discovery-ten.vercel.app/)
+Deployed to Vercel: [https://game-discovery-mw.vercel.app/](https://game-discovery-mw.vercel.app/)
 
 ## 5. Local Deployment
 
@@ -93,7 +93,7 @@ TBD
 
 ## 4. 在线预览
 
-项目已部署至 Vercel：[https://game-discovery-ten.vercel.app/](https://game-discovery-ten.vercel.app/)
+项目已部署至 Vercel：[https://game-discovery-mw.vercel.app/](https://game-discovery-mw.vercel.app/)
 
 ## 5. 本地运行
 
@@ -113,7 +113,7 @@ npm install
 3. 在根目录创建 `.env` 文件并添加你的 RAWG API Key
 
 ```env
-VITE_RAWG_API_KEY=你的API密钥
+VITE_RAWG_API_KEY=你的API Key
 ```
 
 你可以从 [RAWG API](https://rawg.io/apidocs) 免费获取 API Key。
@@ -125,5 +125,9 @@ npm run dev
 ```
 
 ## 6. 项目亮点
+
+<!-- TODO 性能优化、打包相关优化 -->
+<!-- TODO 添加许可证 -->
+<!-- TODO 写项目亮点（同步写英文版） -->
 
 TBD
