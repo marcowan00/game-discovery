@@ -1,6 +1,14 @@
-import { GridItem, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  GridItem,
+  Heading,
+  SimpleGrid,
+  Spinner,
+} from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ExpandableText from "../components/ExpandableText";
+import FavoriteButton from "../components/FavoriteButton";
 import GameAttributes from "../components/GameAttributes";
 import GameScreenshots from "../components/GameScreenshots";
 import GameTrailer from "../components/GameTrailer";
@@ -15,14 +23,24 @@ const GameDetailPage = () => {
   if (error || !game) throw error;
 
   return (
-    <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={5}>
+    <SimpleGrid
+      columns={{ sm: 1, md: 2 }}
+      spacing={5}
+      paddingX={10}
+      paddingY={5}
+    >
       <GridItem>
-        <Heading marginBottom={5}>{game.name}</Heading>
+        <Flex marginBottom={5} gap={10}>
+          <Heading>{game.name}</Heading>
+          <FavoriteButton game={game} />
+        </Flex>
         <ExpandableText limit={300}>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />
       </GridItem>
       <GridItem>
-        <GameTrailer gameId={game.id} />
+        <Box marginBottom={5}>
+          <GameTrailer gameId={game.id} />
+        </Box>
         <GameScreenshots gameId={game.id} />
       </GridItem>
     </SimpleGrid>
