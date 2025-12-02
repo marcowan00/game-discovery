@@ -1,4 +1,5 @@
 import {
+  Flex,
   Heading,
   HStack,
   Tag,
@@ -32,11 +33,11 @@ const GameFilterHeader = () => {
 
   return (
     <>
-      <Heading as="h1" marginY={5} fontSize="5xl">
+      <Heading as="h1" marginY={5} fontSize={{ base: "4xl", lg: "5xl" }}>
         {headingText}
       </Heading>
       {isFiltering && (
-        <HStack marginTop={3} marginBottom={5}>
+        <Flex marginTop={3} marginBottom={5} flexWrap="wrap" gap={3}>
           {searchText && (
             <Tag size="md" borderRadius="full">
               <TagLabel>Searching: "{searchText}"</TagLabel>
@@ -55,7 +56,7 @@ const GameFilterHeader = () => {
               <TagCloseButton onClick={() => setGenreId(undefined)} />
             </Tag>
           )}
-        </HStack>
+        </Flex>
       )}
     </>
   );
