@@ -1,9 +1,18 @@
+import { Center, Spinner } from "@chakra-ui/react";
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
-import FavoritesPage from "./pages/FavoritesPage";
-import GameDetailPage from "./pages/GameDetailPage";
 import HomePage from "./pages/HomePage";
 import Layout from "./pages/Layout";
+
+const GameDetailPage = lazy(() => import("./pages/GameDetailPage"));
+const FavoritesPage = lazy(() => import("./pages/FavoritesPage"));
+
+const LoadingFallback = () => (
+  <Center height="100vh">
+    <Spinner size="xl"></Spinner>
+  </Center>
+);
 
 const router = createBrowserRouter([
   {
@@ -14,11 +23,19 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       {
         path: "games/:slug",
-        element: <GameDetailPage />,
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <GameDetailPage />
+          </Suspense>
+        ),
       },
       {
         path: "favorites",
-        element: <FavoritesPage />,
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <FavoritesPage />
+          </Suspense>
+        ),
       },
     ],
   },
