@@ -19,7 +19,7 @@ const GameCard = ({ game }: Props) => {
       _hover={{ cursor: "pointer" }}
       onClick={() => navigate("/games/" + game.slug)}
     >
-      <Image src={getCroppedImageUrl(game.background_image)} />
+      <Image src={getCroppedImageUrl(game.background_image)} loading="lazy" />
       <Box position="absolute" top={2} right={2}>
         <FavoriteButton game={game} />
       </Box>

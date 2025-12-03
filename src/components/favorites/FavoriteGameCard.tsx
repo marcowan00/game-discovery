@@ -35,6 +35,7 @@ const FavoriteGameCard = ({ game }: Props) => {
         width="150px"
         height="100%"
         src={getCroppedImageUrl(game.background_image)}
+        loading="lazy"
       />
       <HStack flex="1" justifyContent="space-between" alignItems="center">
         <CardBody>
