@@ -1,11 +1,4 @@
-import {
-  Flex,
-  Heading,
-  HStack,
-  Tag,
-  TagCloseButton,
-  TagLabel,
-} from "@chakra-ui/react";
+import { Flex, Heading, Tag, TagCloseButton, TagLabel } from "@chakra-ui/react";
 import { useGamesCount, useLookupGenre, useLookupPlatform } from "../../hooks";
 import useGameQueryStore from "../../stores/gameQueryStore";
 

@@ -23,7 +23,7 @@ const BackToTopButton = () => {
   };
 
   useEffect(() => {
-    // 节流处理，防止短时间内过多滚动事件
+    // 防抖处理，防止短时间内过多滚动事件
     let timeoutId: NodeJS.Timeout;
 
     const handleScroll = () => {
