@@ -11,16 +11,19 @@ const SearchInput = () => {
   const navigate = useNavigate();
   const isHomePage = useLocation().pathname === "/";
 
-  const isUserTyping = useRef(false);
+  const isTypingInHomePage = useRef(false);
 
+  // 删除搜索 tag 时自动清空搜索框
   useEffect(() => {
-    isUserTyping.current = false;
-    setInputValue(searchText || "");
+    isTypingInHomePage.current = false;
+    // 防止搜索途中被意外 trim 掉用户输入的空格
+    if (inputValue.trim() !== searchText?.trim())
+      setInputValue(searchText || "");
   }, [searchText]);
 
   // 主页输入后实时搜索 + 防抖
   useEffect(() => {
-    if (!isHomePage || !isUserTyping.current) return;
+    if (!isHomePage || !isTypingInHomePage.current) return;
 
     const debounceTimer = setTimeout(() => {
       setSearchText(inputValue);
@@ -42,7 +45,7 @@ const SearchInput = () => {
         <Input
           value={inputValue}
           onChange={(event) => {
-            if (isHomePage) isUserTyping.current = true;
+            if (isHomePage) isTypingInHomePage.current = true;
             setInputValue(event.target.value);
           }}
           borderRadius={20}
