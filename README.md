@@ -50,7 +50,7 @@ npm install
 3. Create a `.env` file in the root directory and add your RAWG API key
 
 ```env
-VITE_RAWG_API_KEY: "your_rawg_api_key"
+VITE_RAWG_API_KEY=your_rawg_api_key_here
 ```
 
 You can get a free API key from [RAWG API](https://rawg.io/apidocs).
@@ -123,7 +123,7 @@ npm install
 3. 在根目录创建 `.env` 文件并添加你的 RAWG API Key
 
 ```env
-VITE_RAWG_API_KEY: "你的API Key"
+VITE_RAWG_API_KEY=你的RAWG_API_KEY
 ```
 
 你可以从 [RAWG API](https://rawg.io/apidocs) 免费获取 API Key。
